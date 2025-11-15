@@ -16,7 +16,6 @@ protected:
 
 private:
     QList<QTcpSocket*> clients;
-
     void broadcastMessage(const QByteArray& message, QTcpSocket* sender);
 
 signals:
