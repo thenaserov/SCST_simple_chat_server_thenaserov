@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QTcpServer>
 #include <QTcpSocket>
+#include <QMap>
 
 class Server : public QTcpServer
 {
@@ -16,6 +17,8 @@ protected:
 
 private:
     QList<QTcpSocket*> clients;
+    QMap<QTcpSocket*, QString> _socket_username_map;
+    QSet<QTcpSocket*> _pendingUsernameSockets;
     void broadcastMessage(const QByteArray& message, QTcpSocket* sender);
 
 signals:
