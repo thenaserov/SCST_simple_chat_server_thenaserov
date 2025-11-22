@@ -12,11 +12,11 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # For developement under Qt 5 / 6 simply change the line below (ex) -> Qt6 => Qt5
-find_package(Qt6 REQUIRED COMPONENTS Core Network)
+find_package(Qt5 REQUIRED COMPONENTS Core Network)
 
 add_executable(SCST
   main.cpp
   server.h
   server.cpp
 )
-target_link_libraries(SCST PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Network)
+target_link_libraries(SCST PRIVATE Qt5::Core Qt5::Network)

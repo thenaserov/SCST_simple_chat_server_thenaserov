@@ -57,7 +57,7 @@ void Server::broadcastMessage(const QByteArray &message, QTcpSocket *sender)
     {
         if (client != sender)
         {
-            client->write(message);
+            client->write(_socket_username_map.value(sender).toUtf8() + ": " + message);
         }
     }
 }
